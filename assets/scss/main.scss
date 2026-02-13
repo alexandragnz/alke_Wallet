@@ -1,0 +1,522 @@
+@use "../../node_modules/bootstrap/scss/bootstrap";
+
+/* Variables Globales */
+:root {
+    --alke-primary: #6366f1;
+    --alke-secondary: #8b5cf6;
+    --alke-dark: #1e1b4b;
+    --alke-success: #10b981;
+    --alke-danger: #ef4444;
+}
+
+/* ===================================
+   ESTILOS BASE
+   =================================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+}
+
+/* Body para Login */
+body.login-page {
+    background: linear-gradient(135deg, var(--alke-primary) 0%, var(--alke-secondary) 100%);
+    display: flex;
+    align-items: center;
+}
+
+/* Body para SendMoney */
+body.sendmoney-page {
+    background: #f3f4f6;
+}
+
+/* ===================================
+   CARDS
+   =================================== */
+.card {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    margin-bottom: 2rem;
+}
+
+.card-header {
+    background: white;
+    border: none;
+    padding: 1.5rem 2rem;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.card-footer {
+    background: #f9fafb;
+    border: none;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--alke-dark);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ===================================
+   LOGIN ESPECÍFICO
+   =================================== */
+.login-container {
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.login-container .card {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.login-container .card-header {
+    padding: 2.5rem 2rem 1rem;
+    text-align: center;
+}
+
+.wallet-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--alke-primary), var(--alke-secondary));
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.wallet-icon i {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.brand-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--alke-dark);
+    margin-bottom: 0.5rem;
+}
+
+.brand-subtitle {
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 1.5rem 0;
+    color: #9ca3af;
+    font-size: 0.875rem;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.divider span {
+    padding: 0 1rem;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #6b7280;
+    z-index: 10;
+}
+
+.password-toggle:hover {
+    color: var(--alke-primary);
+}
+
+/* ===================================
+   SENDMONEY ESPECÍFICO
+   =================================== */
+.navbar {
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--alke-dark) !important;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.wallet-icon-small {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--alke-primary), var(--alke-secondary));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wallet-icon-small i {
+    font-size: 1.25rem;
+    color: white;
+}
+
+.balance-card {
+    background: linear-gradient(135deg, var(--alke-primary), var(--alke-secondary));
+    border-radius: 20px;
+    padding: 2rem;
+    color: white;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+}
+
+.balance-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+.balance-amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.sendmoney-page .card-header {
+    border-radius: 20px 20px 0 0 !important;
+    border-bottom: 2px solid #f3f4f6;
+}
+
+.quick-amount {
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 0.75rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    color: var(--alke-dark);
+    background: white;
+}
+
+.quick-amount:hover {
+    border-color: var(--alke-primary);
+    color: var(--alke-primary);
+    background: #f9fafb;
+}
+
+.quick-amount.active {
+    background: linear-gradient(135deg, var(--alke-primary), var(--alke-secondary));
+    border-color: var(--alke-primary);
+    color: white;
+}
+
+/* ===================================
+   TRANSACTION HISTORY
+   =================================== */
+.history-card {
+    position: sticky;
+    top: 2rem;
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+}
+
+.transaction-item {
+    padding: 1rem;
+    border-bottom: 1px solid #f3f4f6;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: background 0.2s ease;
+}
+
+.transaction-item:last-child {
+    border-bottom: none;
+}
+
+.transaction-item:hover {
+    background: #f9fafb;
+}
+
+.transaction-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.transaction-icon.sent {
+    background: #fee2e2;
+    color: var(--alke-danger);
+}
+
+.transaction-icon.received {
+    background: #d1fae5;
+    color: var(--alke-success);
+}
+
+.transaction-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.transaction-name {
+    font-weight: 600;
+    color: var(--alke-dark);
+    margin: 0;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.transaction-date {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    margin: 0;
+}
+
+.transaction-amount {
+    font-weight: 700;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.transaction-amount.sent {
+    color: var(--alke-danger);
+}
+
+.transaction-amount.received {
+    color: var(--alke-success);
+}
+
+.empty-history {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: #9ca3af;
+}
+
+.empty-history i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.history-card::-webkit-scrollbar {
+    width: 6px;
+}
+
+.history-card::-webkit-scrollbar-track {
+    background: #f3f4f6;
+    border-radius: 10px;
+}
+
+.history-card::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 10px;
+}
+
+.history-card::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
+/* ===================================
+   FORMULARIOS
+   =================================== */
+.form-label {
+    font-weight: 600;
+    color: var(--alke-dark);
+    margin-bottom: 0.5rem;
+}
+
+.form-control, .form-select {
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--alke-primary);
+    box-shadow: 0 0 0 0.2rem rgba(99, 102, 241, 0.15);
+}
+
+.input-group-text {
+    border: 2px solid #e5e7eb;
+    border-right: none;
+    border-radius: 12px 0 0 12px;
+    background: white;
+    color: #6b7280;
+}
+
+.sendmoney-page .input-group-text {
+    font-weight: 600;
+}
+
+.input-group .form-control {
+    border-left: none;
+    border-radius: 0 12px 12px 0;
+}
+
+.input-group:focus-within .input-group-text {
+    border-color: var(--alke-primary);
+}
+
+.is-invalid {
+    border-color: var(--alke-danger) !important;
+}
+
+.invalid-feedback {
+    display: block;
+    color: var(--alke-danger);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* ===================================
+   BOTONES
+   =================================== */
+.btn-login {
+    background: linear-gradient(135deg, var(--alke-primary), var(--alke-secondary));
+    border: none;
+    border-radius: 12px;
+    padding: 0.875rem;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: white;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+    color: white;
+}
+
+.btn-login:active {
+    transform: translateY(0);
+}
+
+.btn-biometric {
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 0.75rem;
+    background: white;
+    color: var(--alke-dark);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-biometric:hover {
+    border-color: var(--alke-primary);
+    color: var(--alke-primary);
+    background: #f9fafb;
+}
+
+.btn-biometric i {
+    margin-right: 0.5rem;
+}
+
+.btn-send {
+    background: linear-gradient(135deg, var(--alke-primary), var(--alke-secondary));
+    border: none;
+    border-radius: 12px;
+    padding: 0.875rem 2rem;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: white;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-send:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+    color: white;
+}
+
+.btn-cancel {
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 0.875rem 2rem;
+    background: white;
+    color: var(--alke-dark);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-cancel:hover {
+    border-color: var(--alke-primary);
+    color: var(--alke-primary);
+    background: #f9fafb;
+}
+
+/* ===================================
+   LINKS
+   =================================== */
+.link-text {
+    color: var(--alke-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.link-text:hover {
+    color: var(--alke-secondary);
+}
+
+/* ===================================
+   RESPONSIVE
+   =================================== */
+@media (max-width: 991px) {
+    .history-card {
+        position: relative;
+        top: 0;
+        max-height: 500px;
+    }
+}
+
+@media (max-width: 576px) {
+    .login-container .card-header {
+        padding: 2rem 1.5rem 1rem;
+    }
+    
+    .card-body {
+        padding: 1.5rem;
+    }
+    
+    .brand-title {
+        font-size: 1.75rem;
+    }
+    
+    .balance-amount {
+        font-size: 2rem;
+    }
+}

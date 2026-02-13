@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Inicio de sesión</title>
+   <link rel="stylesheet" href="assets/css/index.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+</head>
+
+<!-- login.html -->
+
+<body class="login-page">
+   <div class="container">
+      <div class="login-container">
+         <div class="card">
+            <div class="card-header">
+               <div class="wallet-icon">
+                  <i class="bi bi-wallet2"></i>
+               </div>
+               <h1 class="brand-title">Alke Wallet</h1>
+               <p class="brand-subtitle">Tu billetera digital segura</p>
+            </div>
+
+            <div class="card-body">
+               <form id="loginForm">
+                  <div class="mb-3">
+                     <label for="email" class="form-label">Correo electrónico</label>
+                     <div class="input-group">
+                        <span class="input-group-text">
+                           <i class="bi bi-envelope"></i>
+                        </span>
+                        <input type="email" class="form-control" id="email" placeholder="tu@email.com" required>
+                     </div>
+                  </div>
+
+                  <div class="mb-3">
+                     <label for="password" class="form-label">Contraseña</label>
+                     <div class="input-group position-relative">
+                        <span class="input-group-text">
+                           <i class="bi bi-lock"></i>
+                        </span>
+                        <input type="password" class="form-control" id="password" placeholder="••••••••" required>
+                        <i class="bi bi-eye password-toggle" id="togglePassword"></i>
+                     </div>
+                  </div>
+
+                  <div class="mb-3 d-flex justify-content-between align-items-center">
+                     <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">
+                           Recordarme
+                        </label>
+                     </div>
+                     <a href="#" class="link-text">¿Olvidaste tu contraseña?</a>
+                  </div>
+
+                  <button type="submit" class="btn btn-login">
+                     <i class="bi bi-box-arrow-in-right me-2"></i>Iniciar Sesión
+                  </button>
+               </form>
+
+            </div>
+
+            <div class="card-footer divider">
+               ¿No tienes una cuenta? <a href="#" class="link-text">Regístrate aquí</a>
+            </div>
+         </div>
+      </div>
+   </div>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="script.js">
+</body >
+</html >
