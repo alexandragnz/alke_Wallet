@@ -1,29 +1,19 @@
-// Toggle password visibility
-const togglePassword = document.getElementById('togglePassword');
-const passwordInput = document.getElementById('password');
+// ===================================
+// SENDMONEY.JS 
+// ===================================
 
-togglePassword.addEventListener('click', function () {
-    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-    passwordInput.setAttribute('type', type);
-    this.classList.toggle('bi-eye');
-    this.classList.toggle('bi-eye-slash');
-});
+// Verificar si el usuario está logueado
+if (!sessionStorage.getItem('isLoggedIn')) {
+    alert('⚠️ Debes iniciar sesión primero');
+    window.location.href = 'login.html';
+}
 
-// Form submission
-document.getElementById('loginForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-
-    // Aquí iría tu lógica de autenticación
-    console.log('Intento de login:', { email, password });
-
-    // Simulación de login exitoso
-    alert('¡Bienvenido a Alke Wallet! 🎉');
-});
-
-
+// Mostrar email del usuario logueado (opcional)
+const userEmail = sessionStorage.getItem('userEmail');
+if (userEmail) {
+    console.log('Usuario logueado:', userEmail);
+    // Podrías mostrarlo en el navbar si quieres
+}
 
 // Sample transaction data
 const transactions = [
@@ -80,36 +70,36 @@ const transactions = [
 // Load transaction history
 function loadTransactions() {
     const container = document.getElementById('transactionHistory');
-
+    
     if (transactions.length === 0) {
         container.innerHTML = `
-                    <div class="empty-history">
-                        <i class="bi bi-inbox"></i>
-                        <p>No hay transacciones recientes</p>
-                    </div>
-                `;
+            <div class="empty-history">
+                <i class="bi bi-inbox"></i>
+                <p>No hay transacciones recientes</p>
+            </div>
+        `;
         return;
     }
-
+    
     container.innerHTML = transactions.map(tx => `
-                <div class="transaction-item">
-                    <div class="transaction-icon ${tx.type}">
-                        <i class="bi bi-arrow-${tx.type === 'sent' ? 'up' : 'down'}-circle"></i>
-                    </div>
-                    <div class="transaction-details">
-                        <p class="transaction-name">${tx.name}</p>
-                        <p class="transaction-date">${tx.date}</p>
-                    </div>
-                    <div class="transaction-amount ${tx.type}">
-                        ${tx.type === 'sent' ? '-' : '+'}$${tx.amount.toFixed(2)}
-                    </div>
-                </div>
-            `).join('');
+        <div class="transaction-item">
+            <div class="transaction-icon ${tx.type}">
+                <i class="bi bi-arrow-${tx.type === 'sent' ? 'up' : 'down'}-circle"></i>
+            </div>
+            <div class="transaction-details">
+                <p class="transaction-name">${tx.name}</p>
+                <p class="transaction-date">${tx.date}</p>
+            </div>
+            <div class="transaction-amount ${tx.type}">
+                ${tx.type === 'sent' ? '-' : '+'}$${tx.amount.toFixed(2)}
+            </div>
+        </div>
+    `).join('');
 }
 
 // Quick amount buttons
 document.querySelectorAll('.quick-amount').forEach(btn => {
-    btn.addEventListener('click', function () {
+    btn.addEventListener('click', function() {
         document.querySelectorAll('.quick-amount').forEach(b => b.classList.remove('active'));
         this.classList.add('active');
         const amount = this.dataset.amount;
@@ -123,7 +113,7 @@ function updateSummary() {
     const amount = parseFloat(document.getElementById('amount').value) || 0;
     const fee = amount * 0.02; // 2% fee
     const total = amount + fee;
-
+    
     document.getElementById('summaryAmount').textContent = `$${amount.toFixed(2)}`;
     document.getElementById('summaryFee').textContent = `$${fee.toFixed(2)}`;
     document.getElementById('summaryTotal').textContent = `$${total.toFixed(2)}`;
@@ -133,22 +123,22 @@ function updateSummary() {
 document.getElementById('amount').addEventListener('input', updateSummary);
 
 // Form validation and submission
-document.getElementById('sendMoneyForm').addEventListener('submit', function (e) {
+document.getElementById('sendMoneyForm').addEventListener('submit', function(e) {
     e.preventDefault();
-
+    
     // Remove previous validation states
     this.classList.remove('was-validated');
     document.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
-
+    
     let isValid = true;
-
+    
     // Validate recipient
     const recipient = document.getElementById('recipient');
     if (!recipient.value) {
         recipient.classList.add('is-invalid');
         isValid = false;
     }
-
+    
     // Validate amount
     const amount = document.getElementById('amount');
     const amountValue = parseFloat(amount.value);
@@ -156,22 +146,22 @@ document.getElementById('sendMoneyForm').addEventListener('submit', function (e)
         amount.classList.add('is-invalid');
         isValid = false;
     }
-
+    
     // Validate PIN
     const pin = document.getElementById('pin');
     if (!pin.value || pin.value.length !== 4 || !/^\d{4}$/.test(pin.value)) {
         pin.classList.add('is-invalid');
         isValid = false;
     }
-
+    
     if (isValid) {
         // Success - simulate transaction
         const recipientText = recipient.options[recipient.selectedIndex].text;
         const concept = document.getElementById('concept').value;
         const total = parseFloat(document.getElementById('summaryTotal').textContent.replace('$', ''));
-
+        
         alert(`✅ ¡Transacción exitosa!\n\nDestinatario: ${recipientText}\nMonto total: $${total.toFixed(2)}\n${concept ? 'Concepto: ' + concept : ''}`);
-
+        
         // Add to transaction history
         transactions.unshift({
             type: 'sent',
@@ -180,7 +170,7 @@ document.getElementById('sendMoneyForm').addEventListener('submit', function (e)
             amount: amountValue
         });
         loadTransactions();
-
+        
         // Reset form
         resetForm();
     }
@@ -192,6 +182,15 @@ function resetForm() {
     document.querySelectorAll('.quick-amount').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
     updateSummary();
+}
+
+// Logout function
+function logout() {
+    const confirmed = confirm('¿Estás seguro que deseas cerrar sesión?');
+    if (confirmed) {
+        sessionStorage.clear();
+        window.location.href = 'login.html';
+    }
 }
 
 // Initialize
