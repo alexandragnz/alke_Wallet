@@ -11859,10 +11859,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-/* ===================================
-   ALKE WALLET - ESTILOS COMPLETOS
-   Sin duplicados, limpio y organizado
-   =================================== */
 /* Variables Globales */
 :root {
   --alke-primary: #6366f1;
@@ -12217,8 +12213,7 @@ body.sendmoney-page {
   margin-bottom: 0.5rem;
 }
 
-.form-control,
-.form-select {
+.form-control, .form-select {
   border: 2px solid #e5e7eb;
   border-radius: 12px;
   padding: 0.75rem 1rem;
@@ -12226,8 +12221,7 @@ body.sendmoney-page {
   transition: all 0.3s ease;
 }
 
-.form-control:focus,
-.form-select:focus {
+.form-control:focus, .form-select:focus {
   border-color: var(--alke-primary);
   box-shadow: 0 0 0 0.2rem rgba(99, 102, 241, 0.15);
 }
@@ -12381,97 +12375,168 @@ body.sendmoney-page {
     font-size: 2rem;
   }
 }
-.sendmoney-page {
-  padding: 20px;
-  background: #f3f4f6;
-}
-.sendmoney-page .balance-display {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  color: white;
-  padding: 20px;
-  border-radius: 15px;
-  text-align: center;
-  margin-bottom: 20px;
-}
-.sendmoney-page .balance-display h3 {
-  margin: 0;
-  font-size: 2rem;
-  font-weight: bold;
-}
-.sendmoney-page .balance-display p {
-  margin: 5px 0 0 0;
-  opacity: 0.9;
-}
-.sendmoney-page .list-group-item {
-  border-radius: 10px !important;
-  margin-bottom: 10px;
-  border: 1px solid #e5e7eb;
-}
-.sendmoney-page .transaction-sent {
-  border-left: 4px solid #ef4444;
-}
-.sendmoney-page .transaction-received {
-  border-left: 4px solid #10b981;
-}
-.sendmoney-page .transaction-deposit {
-  border-left: 4px solid #3b82f6;
-}
-.sendmoney-page .amount-sent {
-  color: #ef4444;
-  font-weight: bold;
-}
-.sendmoney-page .amount-received {
-  color: #10b981;
-  font-weight: bold;
-}
-.sendmoney-page .amount-deposit {
-  color: #3b82f6;
-  font-weight: bold;
-}
-.sendmoney-page .history-card {
-  position: sticky;
-  top: 20px;
+/* ===================================
+   MENU - ACTION CARDS
+   =================================== */
+.action-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
 }
 
-.deposits-page {
-  padding: 20px;
-  background: #f3f4f6;
+.action-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.2);
+  border-color: var(--alke-primary);
 }
-.deposits-page .container {
-  max-width: 500px;
+
+.action-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto;
-  margin-top: 50px;
-}
-.deposits-page .balance-display {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  color: white;
-  padding: 20px;
-  border-radius: 15px;
-  text-align: center;
-  margin-bottom: 30px;
-}
-.deposits-page .balance-display h3 {
-  margin: 0;
   font-size: 2rem;
-  font-weight: bold;
 }
-.deposits-page .balance-display p {
-  margin: 5px 0 0 0;
-  opacity: 0.9;
+
+.action-icon.deposit {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
 }
-.deposits-page .card {
-  border-radius: 15px;
-  border: none;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+.action-icon.send {
+  background: linear-gradient(135deg, var(--alke-primary), var(--alke-secondary));
+  color: white;
 }
-.deposits-page .card-header {
+
+.action-icon.history {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+}
+
+.action-icon.withdraw {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+}
+
+.action-icon.settings {
+  background: linear-gradient(135deg, #6b7280, #4b5563);
+  color: white;
+}
+
+.action-icon.help {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: white;
+}
+
+/* ===================================
+   REDIRECT MODAL
+   =================================== */
+.redirect-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+.redirect-content {
   background: white;
-  border-bottom: 2px solid #f3f4f6;
-  border-radius: 15px 15px 0 0 !important;
+  padding: 3rem 4rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
-.deposits-page h2 {
-  color: #1e1b4b;
-  font-weight: bold;
+
+.redirect-content h5 {
+  color: var(--alke-dark);
+  font-weight: 600;
+}
+
+/* ===================================
+   TRANSACTION DETAILED VIEW
+   =================================== */
+.transaction-list {
+  max-height: 700px;
+  overflow-y: auto;
+}
+
+.transaction-item-detailed {
+  padding: 1.25rem;
+  border-bottom: 1px solid #f3f4f6;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: background 0.2s ease;
+}
+
+.transaction-item-detailed:last-child {
+  border-bottom: none;
+}
+
+.transaction-item-detailed:hover {
+  background: #f9fafb;
+}
+
+.transaction-details-full {
+  flex: 1;
+  min-width: 0;
+}
+
+.transaction-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.transaction-meta {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.transaction-type-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.transaction-type-badge.sent {
+  background: #fee2e2;
+  color: var(--alke-danger);
+}
+
+.transaction-type-badge.received {
+  background: #d1fae5;
+  color: var(--alke-success);
+}
+
+.transaction-type-badge.deposit {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.transaction-icon.deposit {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.transaction-concept {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+  font-style: italic;
 }
 
 /*# sourceMappingURL=index.css.map */
