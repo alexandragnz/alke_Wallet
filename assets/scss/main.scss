@@ -359,7 +359,8 @@ body.sendmoney-page {
     margin-bottom: 0.5rem;
 }
 
-.form-control, .form-select {
+.form-control,
+.form-select {
     border: 2px solid #e5e7eb;
     border-radius: 12px;
     padding: 0.75rem 1rem;
@@ -367,7 +368,8 @@ body.sendmoney-page {
     transition: all 0.3s ease;
 }
 
-.form-control:focus, .form-select:focus {
+.form-control:focus,
+.form-select:focus {
     border-color: var(--alke-primary);
     box-shadow: 0 0 0 0.2rem rgba(99, 102, 241, 0.15);
 }
@@ -512,16 +514,128 @@ body.sendmoney-page {
     .login-container .card-header {
         padding: 2rem 1.5rem 1rem;
     }
-    
+
     .card-body {
         padding: 1.5rem;
     }
-    
+
     .brand-title {
         font-size: 1.75rem;
     }
-    
+
     .balance-amount {
         font-size: 2rem;
+    }
+}
+
+.sendmoney-page {
+
+    padding: 20px;
+    background: #f3f4f6;
+
+    .balance-display {
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        color: white;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .balance-display h3 {
+        margin: 0;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .balance-display p {
+        margin: 5px 0 0 0;
+        opacity: 0.9;
+    }
+
+    .list-group-item {
+        border-radius: 10px !important;
+        margin-bottom: 10px;
+        border: 1px solid #e5e7eb;
+    }
+
+    .transaction-sent {
+        border-left: 4px solid #ef4444;
+    }
+
+    .transaction-received {
+        border-left: 4px solid #10b981;
+    }
+
+    .transaction-deposit {
+        border-left: 4px solid #3b82f6;
+    }
+
+    .amount-sent {
+        color: #ef4444;
+        font-weight: bold;
+    }
+
+    .amount-received {
+        color: #10b981;
+        font-weight: bold;
+    }
+
+    .amount-deposit {
+        color: #3b82f6;
+        font-weight: bold;
+    }
+
+    .history-card {
+        position: sticky;
+        top: 20px;
+    }
+}
+
+.deposits-page {
+    padding: 20px;
+    background: #f3f4f6;
+
+    .container {
+        max-width: 500px;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+
+    .balance-display {
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        color: white;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .balance-display h3 {
+        margin: 0;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .balance-display p {
+        margin: 5px 0 0 0;
+        opacity: 0.9;
+    }
+
+    .card {
+        border-radius: 15px;
+        border: none;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+        background: white;
+        border-bottom: 2px solid #f3f4f6;
+        border-radius: 15px 15px 0 0 !important;
+    }
+
+    h2 {
+        color: #1e1b4b;
+        font-weight: bold;
     }
 }

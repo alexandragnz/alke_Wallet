@@ -21,49 +21,49 @@ const transactions = [
         type: 'sent',
         name: 'María González',
         date: 'Hoy, 10:30 AM',
-        amount: 150.00
+        amount: 15000
     },
     {
         type: 'received',
         name: 'Juan Pérez',
         date: 'Hoy, 09:15 AM',
-        amount: 75.50
+        amount: 7550
     },
     {
         type: 'sent',
         name: 'Ana Martínez',
         date: 'Ayer, 05:45 PM',
-        amount: 200.00
+        amount: 20000
     },
     {
         type: 'received',
         name: 'Carlos Rodríguez',
         date: 'Ayer, 02:30 PM',
-        amount: 320.00
+        amount: 32000
     },
     {
         type: 'sent',
         name: 'Tienda Online XYZ',
         date: '10 Feb, 11:20 AM',
-        amount: 89.99
+        amount: 8990
     },
     {
         type: 'sent',
         name: 'Restaurante La Plaza',
         date: '09 Feb, 08:15 PM',
-        amount: 45.00
+        amount: 4500
     },
     {
         type: 'received',
         name: 'Laura Sánchez',
         date: '08 Feb, 03:45 PM',
-        amount: 500.00
+        amount: 50000
     },
     {
         type: 'sent',
         name: 'Supermercado Central',
         date: '07 Feb, 06:30 PM',
-        amount: 125.50
+        amount: 12550
     }
 ];
 
@@ -111,11 +111,7 @@ document.querySelectorAll('.quick-amount').forEach(btn => {
 // Update summary
 function updateSummary() {
     const amount = parseFloat(document.getElementById('amount').value) || 0;
-    const fee = amount * 0.02; // 2% fee
-    const total = amount + fee;
-    
-    document.getElementById('summaryAmount').textContent = `$${amount.toFixed(2)}`;
-    document.getElementById('summaryFee').textContent = `$${fee.toFixed(2)}`;
+
     document.getElementById('summaryTotal').textContent = `$${total.toFixed(2)}`;
 }
 

@@ -12217,7 +12217,8 @@ body.sendmoney-page {
   margin-bottom: 0.5rem;
 }
 
-.form-control, .form-select {
+.form-control,
+.form-select {
   border: 2px solid #e5e7eb;
   border-radius: 12px;
   padding: 0.75rem 1rem;
@@ -12225,7 +12226,8 @@ body.sendmoney-page {
   transition: all 0.3s ease;
 }
 
-.form-control:focus, .form-select:focus {
+.form-control:focus,
+.form-select:focus {
   border-color: var(--alke-primary);
   box-shadow: 0 0 0 0.2rem rgba(99, 102, 241, 0.15);
 }
@@ -12378,6 +12380,98 @@ body.sendmoney-page {
   .balance-amount {
     font-size: 2rem;
   }
+}
+.sendmoney-page {
+  padding: 20px;
+  background: #f3f4f6;
+}
+.sendmoney-page .balance-display {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.sendmoney-page .balance-display h3 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.sendmoney-page .balance-display p {
+  margin: 5px 0 0 0;
+  opacity: 0.9;
+}
+.sendmoney-page .list-group-item {
+  border-radius: 10px !important;
+  margin-bottom: 10px;
+  border: 1px solid #e5e7eb;
+}
+.sendmoney-page .transaction-sent {
+  border-left: 4px solid #ef4444;
+}
+.sendmoney-page .transaction-received {
+  border-left: 4px solid #10b981;
+}
+.sendmoney-page .transaction-deposit {
+  border-left: 4px solid #3b82f6;
+}
+.sendmoney-page .amount-sent {
+  color: #ef4444;
+  font-weight: bold;
+}
+.sendmoney-page .amount-received {
+  color: #10b981;
+  font-weight: bold;
+}
+.sendmoney-page .amount-deposit {
+  color: #3b82f6;
+  font-weight: bold;
+}
+.sendmoney-page .history-card {
+  position: sticky;
+  top: 20px;
+}
+
+.deposits-page {
+  padding: 20px;
+  background: #f3f4f6;
+}
+.deposits-page .container {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.deposits-page .balance-display {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.deposits-page .balance-display h3 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.deposits-page .balance-display p {
+  margin: 5px 0 0 0;
+  opacity: 0.9;
+}
+.deposits-page .card {
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.deposits-page .card-header {
+  background: white;
+  border-bottom: 2px solid #f3f4f6;
+  border-radius: 15px 15px 0 0 !important;
+}
+.deposits-page h2 {
+  color: #1e1b4b;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=index.css.map */

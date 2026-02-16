@@ -41,8 +41,8 @@
         <!-- Balance Card -->
         <div class="balance-card">
             <div class="balance-label">Saldo disponible</div>
-            <h2 class="balance-amount" id="currentBalance">$0</h2>
-            <small><i class="bi bi-info-circle me-1"></i> CLP - Peso chileno</small>
+            <h2 class="balance-amount" id="currentBalance">$0.00</h2>
+            <small><i class="bi bi-info-circle me-1"></i> USD - Dólares Americanos</small>
         </div>
 
         <!-- Welcome Message -->
@@ -57,7 +57,7 @@
         <div class="row g-3">
             <!-- Depositar -->
             <div class="col-md-6 col-lg-4">
-                <div class="card action-card" onclick="navigateTo('deposito.html', 'Depósito')">
+                <div class="card action-card" onclick="navigateTo('deposits.html', 'Depósito')">
                     <div class="card-body text-center">
                         <div class="action-icon deposit">
                             <i class="bi bi-cash-coin"></i>
@@ -70,7 +70,7 @@
 
             <!-- Enviar Dinero -->
             <div class="col-md-6 col-lg-4">
-                <div class="card action-card" onclick="navigateTo('sendmoney-updated.html', 'Enviar Dinero')">
+                <div class="card action-card" onclick="navigateTo('sendmoney.html', 'Enviar Dinero')">
                     <div class="card-body text-center">
                         <div class="action-icon send">
                             <i class="bi bi-send"></i>
@@ -83,7 +83,7 @@
 
             <!-- Últimos Movimientos -->
             <div class="col-md-6 col-lg-4">
-                <div class="card action-card" onclick="navigateTo('movimientos.html', 'Últimos Movimientos')">
+                <div class="card action-card" onclick="navigateTo('transactions.html', 'Últimos Movimientos')">
                     <div class="card-body text-center">
                         <div class="action-icon history">
                             <i class="bi bi-clock-history"></i>
@@ -96,7 +96,7 @@
 
             <!-- Retirar -->
             <div class="col-md-6 col-lg-4">
-                <div class="card action-card" onclick="navigateTo('retirar.html', 'Retirar')">
+                <div class="card action-card" onclick="alert('🚧 Función en desarrollo')">
                     <div class="card-body text-center">
                         <div class="action-icon withdraw">
                             <i class="bi bi-arrow-down-circle"></i>
@@ -109,7 +109,7 @@
 
             <!-- Configuración -->
             <div class="col-md-6 col-lg-4">
-                <div class="card action-card" onclick="navigateTo('configuracion.html', 'Configuración')">
+                <div class="card action-card" onclick="alert('🚧 Función en desarrollo')">
                     <div class="card-body text-center">
                         <div class="action-icon settings">
                             <i class="bi bi-gear"></i>
@@ -122,7 +122,7 @@
 
             <!-- Ayuda -->
             <div class="col-md-6 col-lg-4">
-                <div class="card action-card" onclick="navigateTo('ayuda.html', 'Ayuda')">
+                <div class="card action-card" onclick="alert('🚧 Función en desarrollo')">
                     <div class="card-body text-center">
                         <div class="action-icon help">
                             <i class="bi bi-question-circle"></i>
@@ -135,7 +135,7 @@
         </div>
     </div>
 
-    <!-- Redirect Modal -->
+    <!-- Redirect Modal 
     <div class="redirect-modal" id="redirectModal">
         <div class="redirect-content">
             <div class="spinner-border text-primary mb-3" role="status">
@@ -143,7 +143,7 @@
             </div>
             <h5>Redirigiendo a <span id="redirectTarget"></span>...</h5>
         </div>
-    </div>
+    </div>-->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./menu.js"></script>
